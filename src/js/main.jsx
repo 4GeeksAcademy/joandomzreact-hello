@@ -8,6 +8,8 @@ import "bootstrap"
 // index.css'
 import '../styles/index.css'
 
+
+
 // components
 import Home from './components/Home';
 

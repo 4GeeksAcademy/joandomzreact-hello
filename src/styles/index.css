@@ -1,11 +1,15 @@
-/* 
 
-    You can write your own styles here...
+.Contador{
     
+    display:flex;
     
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
+    background: black;
+    font-size:60 px;
+    line-height:60 px;
+    color: white;
+    padding: 10 px;
+    };
     
-    import 'relative/path/to/stylesheet.scss';
-
-*/
+    .Crono{
+    
+    };
