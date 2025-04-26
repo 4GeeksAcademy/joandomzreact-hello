@@ -4,7 +4,7 @@ function SecondsCounter(props) {
             <i className="fa-regular fa-clock"></i>
             </div>
           {props.seconds.toString().padStart(6,"0").split("").map((digit, index)=>(
-               <div className="Manuel" key={index}> {digit} </div>
+               <div className="digitos" key={index}> {digit} </div>
           ))}
        </div>)
   }

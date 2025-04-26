@@ -1,26 +1,34 @@
-import React, {useEffect, useState} from "react";
-
+// Home.jsx
+import React from "react";
 import SecondsCounter from "../secondscounter";
 
+class Home extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            seconds: 0
+        };
+    }
 
-//create your first component
-const Home = () => {
+    componentDidMount() {
+        this.interval = setInterval(() => {
+            this.setState(prevState => ({
+                seconds: prevState.seconds + 1
+            }));
+        }, 1000);
+    }
 
-	let [seconds, setSeconds] = useState(0)
-	useEffect(()=> {
-		const intervalo = setInterval(()=> {
-			setSeconds(seconds++) 
-		}, 1000)
-		return () => clearInterval(intervalo)
-	}, []);
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
 
-	return (
-		<div className="text-center">
-            <SecondsCounter seconds = {seconds} />
-
-
-		</div>
-	);
-};
+    render() {
+        return (
+            <div className="text-center">
+                <SecondsCounter seconds={this.state.seconds} />
+            </div>
+        );
+    }
+}
 
 export default Home;
